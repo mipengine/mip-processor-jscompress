@@ -1,0 +1,41 @@
+{
+    "name": "mip-processor-jscompress",
+    "description": "MIP Processor For JS Compress",
+    "version": "1.0.0",
+
+    "keywords": [
+        "mip",
+        "tool",
+        "build",
+        "processor",
+        "javascript",
+        "compress"
+    ],
+
+    "files": [
+        "lib",
+        "index.js"
+    ],
+
+    "dependencies": {
+        "uglify-js": "^2.7.3",
+        "object-assign": "^4.1.0",
+        "mip-processor": "^1.0.0"
+    },
+
+    "engines": {
+        "node": ">= 4.0.0"
+    },
+
+    "contributors": [
+        { "name": "erik", "email": "errorrik@gmail.com" }
+    ],
+
+    "main": "index.js",
+
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mipengine/mip-processor-jscompress.git"
+    }
+}
