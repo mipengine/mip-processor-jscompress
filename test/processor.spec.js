@@ -10,8 +10,13 @@ MockFile.prototype.setData = function (data) {
     this.data = data
 };
 
+
+MockFile.prototype.getData = function () {
+    return this.data;
+};
+
 function MockBuilder() {
-    this.processFiles = [
+    this.files = [
         new MockFile({
             data: 'define("test",["require"],function (require) {var name="name";var value = "value";});',
             fullPath: '/project/1.js',
@@ -30,8 +35,8 @@ function MockBuilder() {
     ];
 }
 
-MockBuilder.prototype.getProcessFiles = function () {
-    return this.processFiles;
+MockBuilder.prototype.getFiles = function () {
+    return this.files;
 };
 
 describe("JS Compressor", function () {
@@ -41,10 +46,10 @@ describe("JS Compressor", function () {
         var builder = new MockBuilder();
 
         processor.process(builder).then(function () {
-            var files = builder.getProcessFiles();
-            expect(/function\([a-z]\)/i.test(files[0].data)).toBeTruthy();
-            expect(/function\s*\(require\)/i.test(files[1].data)).toBeTruthy();
-            expect(/var [a-z]=/i.test(files[2].data)).toBeTruthy();
+            var files = builder.getFiles();
+            expect(/function\([a-z]\)/i.test(files[0].getData())).toBeTruthy();
+            expect(/function\s*\(require\)/i.test(files[1].getData())).toBeTruthy();
+            expect(/var [a-z]=/i.test(files[2].getData())).toBeTruthy();
 
             done();
         });
