@@ -1,7 +1,7 @@
 {
     "name": "mip-processor-jscompress",
     "description": "MIP Processor For JS Compress",
-    "version": "1.0.0",
+    "version": "1.1.0",
 
     "keywords": [
         "mip",
@@ -20,7 +20,7 @@
     "dependencies": {
         "uglify-js": "^2.7.3",
         "object-assign": "^4.1.0",
-        "mip-processor": "^1.0.0"
+        "mip-processor": "^1.1.0"
     },
 
     "engines": {
