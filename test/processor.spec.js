@@ -39,6 +39,9 @@ MockBuilder.prototype.getFiles = function () {
     return this.files;
 };
 
+MockBuilder.prototype.notify = function () {
+};
+
 describe("JS Compressor", function () {
 
     it("process *.js by default", function (done) {
